@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading{
+    margin: 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#order{
+    padding: 10px;
+    text-align: center;
+}
+
+button{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    font-size: 15px;
+    outline: white;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    outline: black;
+    border-radius: 10px;
+    border: 2px black solid;
+}
+
+#form p{ 
+    font-size: 18px;
+    padding-bottom: 10px;
+    text-justify: auto;   
+}
+
+hr{
+    margin: 10px;
+}
+
+.show{
+    text-align: center;
+    font-size: 18px;
+}
+
+#order-id{
+    text-align: right;
+    margin-right: 30px;
+    font-size: 30px;
+}

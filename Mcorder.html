@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald's</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <h1 class="heading">Order Food</h1>
+    <div id="order">
+        <form id="form" > 
+        <p>Hamburger  <input type="checkbox" value="Ham Burger" class="selectedCheckbox"></p>
+        <p>Veg Burger <input type="checkbox" value ="Veg Burger" class="selectedCheckbox"></p>
+        <p>Coke       <input type="checkbox" value="coke" id="coke" class="selectedCheckbox"> </p>
+        <button type="submit">Order Food</button>
+    </form>
+    <hr />
+    </div>
+        <div class="show">
+            <p id="order-id"></p>
+            <p id="showOrder1"></p>
+        </div>
+
+    <script>
+    
+        let f = document.getElementById("form")
+        let Hbur = document.querySelectorAll(".selectedCheckbox");
+        let showOrder = document.getElementById("showOrder1")
+        let orderId = document.getElementById("order-id");
+        let img = document.createElement("img");
+        let show = document.querySelector(".show");
+        let showOrder2 = document.getElementById("showOrder2");
+
+        
+
+
+        f.addEventListener("submit", (e) => {
+            e.preventDefault();
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve()
+                    orderId.innerHTML = "Order Id - <strong>" + Math.round(Math.random() * 20, 3 + "</strong>");
+                    
+                                        // for(let i=0; i<Hbur.length; i++){
+                    //     if(Hbur[i] == true) console.log(Hbur[i].value)
+                    // }
+                    Hbur.forEach(el => {
+                        if(el.checked == true){
+                            if(el.value == "Ham Burger") {
+                                img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5dSyH3TJaYa9al39vS435tKK50mLZ-by3Kg&usqp=CAU"
+                                showOrder.textContent = el.value
+                                show.appendChild(img)
+                            }
+                            if(el.value == "Veg Burger"){
+                                showOrder.textContent = el.value
+                                img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-SEdXACj-viaFHBiDGmroubhTC8gKQGe6Q&usqp=CAU"
+                                show.appendChild(img)
+                            }
+                            if(el.value == "coke"){
+                                showOrder.textContent = el.value
+                                img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtY3xZJ6TI3teYd8FyVfyDulurIueU7dLfcQ&usqp=CAU"
+                                show.appendChild(img)
+                            }
+                        }
+                    })
+        
+                }, Math.random() * 1000)
+            })
+            
+        })
+
+    </script>
+</body>
+</html>
